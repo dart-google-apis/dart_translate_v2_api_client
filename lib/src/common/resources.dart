@@ -12,13 +12,13 @@ class DetectionsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<DetectionsListResponse> list(String q, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<DetectionsListResponse> list(core.String q, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "v2/detect";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (q == null) paramErrors.add("q is required");
     if (q != null) queryParams["q"] = q;
     if (optParams != null) {
@@ -55,13 +55,13 @@ class LanguagesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<LanguagesListResponse> list({String target, Map optParams}) {
-    var completer = new Completer();
+  async.Future<LanguagesListResponse> list({core.String target, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "v2/languages";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (target != null) queryParams["target"] = target;
     if (optParams != null) {
       optParams.forEach((key, value) {
@@ -108,13 +108,13 @@ class TranslationsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<TranslationsListResponse> list(String q, String target, {String cid, String format, String source, Map optParams}) {
-    var completer = new Completer();
+  async.Future<TranslationsListResponse> list(core.String q, core.String target, {core.String cid, core.String format, core.String source, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "v2";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (cid != null) queryParams["cid"] = cid;
     if (format != null && !["html", "text"].contains(format)) {
       paramErrors.add("Allowed values for format: html, text");
