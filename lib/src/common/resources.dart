@@ -1,8 +1,8 @@
 part of translate_v2_api_client;
 
-class DetectionsResource extends Resource {
+class DetectionsResource_ extends Resource {
 
-  DetectionsResource(Client client) : super(client) {
+  DetectionsResource_(Client client) : super(client) {
   }
 
   /**
@@ -30,7 +30,7 @@ class DetectionsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -43,9 +43,9 @@ class DetectionsResource extends Resource {
   }
 }
 
-class LanguagesResource extends Resource {
+class LanguagesResource_ extends Resource {
 
-  LanguagesResource(Client client) : super(client) {
+  LanguagesResource_(Client client) : super(client) {
   }
 
   /**
@@ -72,7 +72,7 @@ class LanguagesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -85,9 +85,9 @@ class LanguagesResource extends Resource {
   }
 }
 
-class TranslationsResource extends Resource {
+class TranslationsResource_ extends Resource {
 
-  TranslationsResource(Client client) : super(client) {
+  TranslationsResource_(Client client) : super(client) {
   }
 
   /**
@@ -134,7 +134,7 @@ class TranslationsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

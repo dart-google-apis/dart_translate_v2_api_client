@@ -4,12 +4,12 @@ part of translate_v2_api_browser;
 /** Lets you translate text from one language to another */
 class Translate extends BrowserClient {
 
-  DetectionsResource _detections;
-  DetectionsResource get detections => _detections;
-  LanguagesResource _languages;
-  LanguagesResource get languages => _languages;
-  TranslationsResource _translations;
-  TranslationsResource get translations => _translations;
+  DetectionsResource_ _detections;
+  DetectionsResource_ get detections => _detections;
+  LanguagesResource_ _languages;
+  LanguagesResource_ get languages => _languages;
+  TranslationsResource_ _translations;
+  TranslationsResource_ get translations => _translations;
 
   /**
    * Data format for the response.
@@ -63,8 +63,8 @@ class Translate extends BrowserClient {
   Translate([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/language/translate/";
     rootUrl = "https://www.googleapis.com:443/";
-    _detections = new DetectionsResource(this);
-    _languages = new LanguagesResource(this);
-    _translations = new TranslationsResource(this);
+    _detections = new DetectionsResource_(this);
+    _languages = new LanguagesResource_(this);
+    _translations = new TranslationsResource_(this);
   }
 }
