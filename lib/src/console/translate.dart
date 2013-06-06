@@ -62,7 +62,7 @@ class Translate extends ConsoleClient {
 
   Translate([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/language/translate/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _detections = new DetectionsResource_(this);
     _languages = new LanguagesResource_(this);
     _translations = new TranslationsResource_(this);

@@ -62,7 +62,7 @@ class Translate extends BrowserClient {
 
   Translate([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/language/translate/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _detections = new DetectionsResource_(this);
     _languages = new LanguagesResource_(this);
     _translations = new TranslationsResource_(this);
