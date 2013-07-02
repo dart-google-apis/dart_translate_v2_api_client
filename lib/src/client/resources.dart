@@ -13,7 +13,6 @@ class DetectionsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<DetectionsListResponse> list(core.String q, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "v2/detect";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -30,16 +29,13 @@ class DetectionsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new DetectionsListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new DetectionsListResponse.fromJson(data));
   }
 }
 
@@ -56,7 +52,6 @@ class LanguagesResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<LanguagesListResponse> list({core.String target, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "v2/languages";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -72,16 +67,13 @@ class LanguagesResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new LanguagesListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new LanguagesListResponse.fromJson(data));
   }
 }
 
@@ -109,7 +101,6 @@ class TranslationsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<TranslationsListResponse> list(core.String q, core.String target, {core.String cid, core.String format, core.String source, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "v2";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -134,16 +125,13 @@ class TranslationsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new TranslationsListResponse.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new TranslationsListResponse.fromJson(data));
   }
 }
 

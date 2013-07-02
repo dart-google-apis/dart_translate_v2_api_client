@@ -8,7 +8,7 @@ Auto-generated client library for accessing the translate v2 API.
 
 Lets you translate text from one language to another
 
-Official API documentation: http://code.google.com/apis/language/translate/v2/using_rest.html
+Official API documentation: https://developers.google.com/translate/v2/using_rest
 
 For web applications:
 ```
