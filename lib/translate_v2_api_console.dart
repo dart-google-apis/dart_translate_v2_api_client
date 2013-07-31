@@ -1,14 +1,15 @@
-library translate_v2_api_console;
+library translate_v2_api.console;
 
-import "translate_v2_api_client.dart";
-export "translate_v2_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/translate.dart";
+import 'package:google_translate_v2_api/src/cloud_api_console.dart';
+
+import "package:google_translate_v2_api/translate_v2_api_client.dart";
+
+/** Lets you translate text from one language to another */
+class Translate extends Client with ConsoleClient {
+
+  final oauth2.OAuth2Console auth;
+
+  Translate([oauth2.OAuth2Console this.auth]);
+}

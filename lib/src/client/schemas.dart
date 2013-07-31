@@ -1,4 +1,4 @@
-part of translate_v2_api_client;
+part of translate_v2_api;
 
 class DetectionsListResponse {
 
@@ -8,10 +8,7 @@ class DetectionsListResponse {
   /** Create new DetectionsListResponse from JSON data */
   DetectionsListResponse.fromJson(core.Map json) {
     if (json.containsKey("detections")) {
-      detections = [];
-      json["detections"].forEach((item) {
-        detections.add(new DetectionsResource.fromJson(item));
-      });
+      detections = json["detections"].map((detectionsItem) => new DetectionsResource.fromJson(detectionsItem)).toList();
     }
   }
 
@@ -20,10 +17,7 @@ class DetectionsListResponse {
     var output = new core.Map();
 
     if (detections != null) {
-      output["detections"] = new core.List();
-      detections.forEach((item) {
-        output["detections"].add(item.toJson());
-      });
+      output["detections"] = detections.map((detectionsItem) => detectionsItem.toJson()).toList();
     }
 
     return output;
@@ -62,10 +56,7 @@ class LanguagesListResponse {
   /** Create new LanguagesListResponse from JSON data */
   LanguagesListResponse.fromJson(core.Map json) {
     if (json.containsKey("languages")) {
-      languages = [];
-      json["languages"].forEach((item) {
-        languages.add(new LanguagesResource.fromJson(item));
-      });
+      languages = json["languages"].map((languagesItem) => new LanguagesResource.fromJson(languagesItem)).toList();
     }
   }
 
@@ -74,10 +65,7 @@ class LanguagesListResponse {
     var output = new core.Map();
 
     if (languages != null) {
-      output["languages"] = new core.List();
-      languages.forEach((item) {
-        output["languages"].add(item.toJson());
-      });
+      output["languages"] = languages.map((languagesItem) => languagesItem.toJson()).toList();
     }
 
     return output;
@@ -133,10 +121,7 @@ class TranslationsListResponse {
   /** Create new TranslationsListResponse from JSON data */
   TranslationsListResponse.fromJson(core.Map json) {
     if (json.containsKey("translations")) {
-      translations = [];
-      json["translations"].forEach((item) {
-        translations.add(new TranslationsResource.fromJson(item));
-      });
+      translations = json["translations"].map((translationsItem) => new TranslationsResource.fromJson(translationsItem)).toList();
     }
   }
 
@@ -145,10 +130,7 @@ class TranslationsListResponse {
     var output = new core.Map();
 
     if (translations != null) {
-      output["translations"] = new core.List();
-      translations.forEach((item) {
-        output["translations"].add(item.toJson());
-      });
+      output["translations"] = translations.map((translationsItem) => translationsItem.toJson()).toList();
     }
 
     return output;
@@ -196,3 +178,16 @@ class TranslationsResource {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

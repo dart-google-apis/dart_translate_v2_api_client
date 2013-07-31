@@ -1,18 +1,21 @@
-part of translate_v2_api_client;
+part of translate_v2_api;
 
-class DetectionsResource_ extends Resource {
+class DetectionsResource_ {
 
-  DetectionsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  DetectionsResource_(Client client) :
+      _client = client;
 
   /**
    * Detect the language of text.
    *
    * [q] - The text to detect
+   *   Repeated values: allowed
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<DetectionsListResponse> list(core.String q, {core.Map optParams}) {
+  async.Future<DetectionsListResponse> list(core.List<core.String> q, {core.Map optParams}) {
     var url = "v2/detect";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -39,10 +42,12 @@ class DetectionsResource_ extends Resource {
   }
 }
 
-class LanguagesResource_ extends Resource {
+class LanguagesResource_ {
 
-  LanguagesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  LanguagesResource_(Client client) :
+      _client = client;
 
   /**
    * List the source/target languages supported by the API
@@ -77,19 +82,23 @@ class LanguagesResource_ extends Resource {
   }
 }
 
-class TranslationsResource_ extends Resource {
+class TranslationsResource_ {
 
-  TranslationsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  TranslationsResource_(Client client) :
+      _client = client;
 
   /**
    * Returns text translations from one language to another.
    *
    * [q] - The text to translate
+   *   Repeated values: allowed
    *
    * [target] - The target language into which the text should be translated
    *
    * [cid] - The customization id for translate
+   *   Repeated values: allowed
    *
    * [format] - The format of the text
    *   Allowed values:
@@ -100,7 +109,7 @@ class TranslationsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<TranslationsListResponse> list(core.String q, core.String target, {core.String cid, core.String format, core.String source, core.Map optParams}) {
+  async.Future<TranslationsListResponse> list(core.List<core.String> q, core.String target, {core.List<core.String> cid, core.String format, core.String source, core.Map optParams}) {
     var url = "v2";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
