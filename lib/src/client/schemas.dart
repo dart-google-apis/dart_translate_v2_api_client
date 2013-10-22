@@ -24,7 +24,7 @@ class DetectionsListResponse {
   }
 
   /** Return String representation of DetectionsListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -44,7 +44,7 @@ class DetectionsResource {
   }
 
   /** Return String representation of DetectionsResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -72,7 +72,7 @@ class LanguagesListResponse {
   }
 
   /** Return String representation of LanguagesListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -109,7 +109,7 @@ class LanguagesResource {
   }
 
   /** Return String representation of LanguagesResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -137,7 +137,7 @@ class TranslationsListResponse {
   }
 
   /** Return String representation of TranslationsListResponse */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -174,7 +174,7 @@ class TranslationsResource {
   }
 
   /** Return String representation of TranslationsResource */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
