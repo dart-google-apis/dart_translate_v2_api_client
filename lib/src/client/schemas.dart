@@ -29,18 +29,16 @@ class DetectionsListResponse {
 }
 
 /** An array of languages which we detect for the given text The most likely language list first. */
-class DetectionsResource {
+class DetectionsResource extends SchemaArray<object> {
 
   /** Create new DetectionsResource from JSON data */
-  DetectionsResource.fromJson(core.Map json) {
+  DetectionsResource.fromJson(core.List json) {
+    innerList.addAll(json);
   }
 
   /** Create JSON Object for DetectionsResource */
-  core.Map toJson() {
-    var output = new core.Map();
-
-
-    return output;
+  core.List toJson() {
+    return innerList;
   }
 
   /** Return String representation of DetectionsResource */

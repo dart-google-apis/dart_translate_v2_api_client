@@ -11,3 +11,4 @@ export 'package:google_translate_v2_api/src/client_base.dart' show APIRequestErr
 part 'src/client/client.dart';
 part 'src/client/schemas.dart';
 part 'src/client/resources.dart';
+part 'src/client/utils.dart';
