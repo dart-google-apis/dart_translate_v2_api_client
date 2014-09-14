@@ -7,6 +7,7 @@ import 'package:google_translate_v2_api/src/console_client.dart';
 import "package:google_translate_v2_api/translate_v2_api_client.dart";
 
 /** Lets you translate text from one language to another */
+@deprecated
 class Translate extends Client with ConsoleClient {
 
   final oauth2.OAuth2Console auth;
